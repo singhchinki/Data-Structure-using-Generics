@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace SimpleLinkedList
 {
-     class LinkedList
+    class LinkedList
     {
-            internal Node head;
-            public void Add(int data)
+        internal Node head;
+        public void Add(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
             {
-                Node node = new Node(data);
-                if (this.head == null)
-                {
-                    this.head = node;
-                }
-                else
-                {
+                this.head = node;
+            }
+            else
+            {
                 node.next = head;
                 this.head = node;
-                }
-                Console.WriteLine("inserted into the linked list   " + node.data);
             }
+            Console.WriteLine("inserted into the linked list   " + node.data);
+        }
         public void Display()
         {
             Node temp = this.head;
@@ -36,7 +36,25 @@ namespace SimpleLinkedList
                 temp = temp.next;
             }
         }
+        public void AppendNew()
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+                this.head = node;
+            else
+            {
+                Node temp = head;
+                while (temp != null)
+                {
+                    Console.WriteLine(temp.data + " ");
+                    temp = temp.next;
+                }
+                Console.WriteLine("After Append in linked list " + data); ;
+            }
 
-     }
-    
+        }
+
+    }
 }
+    
+
