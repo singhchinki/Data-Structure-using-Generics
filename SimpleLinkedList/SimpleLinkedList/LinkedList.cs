@@ -18,28 +18,24 @@ namespace SimpleLinkedList
                 }
                 else
                 {
-                    Node temp = head;
-                    while (temp != null)
-                    {
-                        temp = temp.next;
-                    }
-                    temp.next = node;
+                node.next = head;
+                this.head = node;
                 }
-                Console.WriteLine("inserted into the linked list", node.data);
+                Console.WriteLine("inserted into the linked list   " + node.data);
             }
-            public void Display()
+        public void Display()
+        {
+            Node temp = this.head;
+            if (temp == null)
             {
-                Node temp = this.head;
-                if (temp == null)
-                {
-                    Console.WriteLine("Linked List is empty");
-                }
-                while (temp != null)
-                {
-                    Console.WriteLine(temp.data + " ");
-                    temp = temp.next;
-                }
+                Console.WriteLine("Linked List is empty");
             }
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data + " ");
+                temp = temp.next;
+            }
+        }
 
      }
     

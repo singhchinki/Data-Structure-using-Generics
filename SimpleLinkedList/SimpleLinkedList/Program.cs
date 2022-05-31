@@ -1,5 +1,7 @@
-﻿SimpleLinkedList.LinkedList customLinkedList = new SimpleLinkedList.CustomLinkedList();
+﻿SimpleLinkedList.LinkedList customLinkedList = new SimpleLinkedList.
+LinkedList();
+customLinkedList.Add(56);
+customLinkedList.Add(30);
+customLinkedList.Add(70);
 customLinkedList.Display();
-LinkedList.Add(56);
-LinkedList.Add(30);
-LinkedList.Add(70);
+
