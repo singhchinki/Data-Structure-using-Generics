@@ -32,11 +32,11 @@ namespace SimpleLinkedList
             }
             while (temp != null)
             {
-                Console.WriteLine(temp.data + " ");
+                Console.WriteLine( "Display Data  " + temp.data + " ");
                 temp = temp.next;
             }
         }
-        public void AppendNew()
+        public void AppendNew(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
@@ -46,10 +46,9 @@ namespace SimpleLinkedList
                 Node temp = head;
                 while (temp != null)
                 {
-                    Console.WriteLine(temp.data + " ");
                     temp = temp.next;
                 }
-                Console.WriteLine("After Append in linked list " + data); ;
+                Console.WriteLine("After Append in linked list " + data); 
             }
 
         }
@@ -89,7 +88,27 @@ namespace SimpleLinkedList
             }
             int deleteNode = this.head.data;
             this.head = this.head.next;
+            Console.WriteLine("Delete First Node " + deleteNode);
             return deleteNode;
+            
+        }
+        public Node removeLastNode()
+        {
+            if (head == null)
+                return null;
+            if (head.next == null)
+                return null;
+            Node newNode = head;
+            while (newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            Node lastElement = newNode.next;
+            Console.WriteLine("Remove LAst Node  " + lastElement.data);
+            newNode.next = null;
+
+            return lastElement;
+           
         }
     }
 }
