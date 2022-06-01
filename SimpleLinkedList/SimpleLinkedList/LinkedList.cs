@@ -81,6 +81,16 @@ namespace SimpleLinkedList
             }
             return head;
         }
+        public int DeleteFirstNode()
+        {
+            if (this.head == null)
+            {
+                return 0;
+            }
+            int deleteNode = this.head.data;
+            this.head = this.head.next;
+            return deleteNode;
+        }
     }
 }
     
